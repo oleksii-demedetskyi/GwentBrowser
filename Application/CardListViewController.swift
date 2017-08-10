@@ -1,6 +1,5 @@
 import UIKit
 
-// HERE:
 typealias Action = ActionWith<Void>
 
 struct ActionWith<T> {
@@ -8,7 +7,6 @@ struct ActionWith<T> {
 }
 
 class CardListViewController: UITableViewController {
-    // HERE:
     struct Props {
         let items: [String]
         let onItemsEnd: Action?
@@ -16,11 +14,9 @@ class CardListViewController: UITableViewController {
         static let empty = Props(items: [], onItemsEnd: nil)
     }
     
-    // HERE:
     var props: Props = .empty { didSet { tableView.reloadData() } }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // HERE:
         return props.items.count
     }
     
@@ -32,9 +28,10 @@ class CardListViewController: UITableViewController {
             fatalError("Cannot get cell with list.card identifier")
         }
         
-        if indexPath.row + 1 == props.items.count { props.onItemsEnd?.perform() }
+        if (props.items.indices.last == indexPath.row) {
+            props.onItemsEnd?.perform()
+        }
         
-        // HERE:
         cell.textLabel?.text = props.items[indexPath.row]
         
         return cell

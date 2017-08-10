@@ -12,6 +12,7 @@
 		DE7961C71F3AF04D00FA9D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7961C51F3AF04D00FA9D02 /* Main.storyboard */; };
 		DE7961C91F3AF04D00FA9D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */; };
 		DE7961CC1F3AF04D00FA9D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7961CA1F3AF04D00FA9D02 /* LaunchScreen.storyboard */; };
+		DE955FC11F3C9A5F004F1147 /* LoadCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FC01F3C9A5F004F1147 /* LoadCards.swift */; };
 		DEA098171F3B24C400C5E280 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA098161F3B24C400C5E280 /* Redux.swift */; };
 		DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */; };
 		DEF47BD81F3B1CCD001C9E3E /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF47BD61F3B1CCD001C9E3E /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +53,7 @@
 		DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7961CB1F3AF04D00FA9D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE7961CD1F3AF04D00FA9D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE955FC01F3C9A5F004F1147 /* LoadCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCards.swift; sourceTree = "<group>"; };
 		DEA098161F3B24C400C5E280 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		DEF47BC51F3B0184001C9E3E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */,
 				DE7961CA1F3AF04D00FA9D02 /* LaunchScreen.storyboard */,
 				DE7961CD1F3AF04D00FA9D02 /* Info.plist */,
+				DE955FC01F3C9A5F004F1147 /* LoadCards.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */,
 				DE7961C21F3AF04D00FA9D02 /* AppDelegate.swift in Sources */,
 				DEA098171F3B24C400C5E280 /* Redux.swift in Sources */,
+				DE955FC11F3C9A5F004F1147 /* LoadCards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

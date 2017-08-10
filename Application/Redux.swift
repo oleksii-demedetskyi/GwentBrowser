@@ -28,14 +28,29 @@ enum Event {
     case didLoadNextBatch(GwentAPI.Response.Cards)
 }
 
-class Store {
-    private(set) var state = State()
-    private var subscribers = [:] as [UUID: ActionWith<State>]
+class Store<State, Event> {
+    private(set) var state: State
+    private let reduce: (inout State, Event) -> ()
+    
+    init(state: State, reduce: @escaping (inout State, Event) -> ()) {
+        self.state = state
+        self.reduce = reduce
+    }
     
     func dispatch(event: Event) {
-        reduce(state: &state, event: event)
+        reduce(&state, event)
         subscribers.forEach { $0.value.perform(state) }
     }
+    
+    func dispatch(creator: (State, ActionWith<Event>) -> ()) {
+        creator(state, ActionWith(perform: dispatch(event:)))
+    }
+    
+    func bind(creator: @escaping (State, ActionWith<Event>) -> ()) -> Action {
+        return Action { self.dispatch(creator: creator) }
+    }
+    
+    private var subscribers = [:] as [UUID: ActionWith<State>]
     
     func subscribe(action: ActionWith<State>) -> UUID {
         let id = UUID()
@@ -49,3 +64,4 @@ class Store {
         subscribers[id] = nil
     }
 }
+
