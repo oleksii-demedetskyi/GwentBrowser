@@ -10,7 +10,7 @@ struct State {
 func reduce(state: inout State, event: Event) {
     switch event {
         
-    case .startNextLoading:
+    case .didStartNextLoading:
         state.isNextLoading = true
         
     case .didEndNextLoading:
@@ -20,12 +20,6 @@ func reduce(state: inout State, event: Event) {
         state.cards.append(contentsOf: cards.results)
         state.nextBatch = cards.next
     }
-}
-
-enum Event {
-    case startNextLoading
-    case didEndNextLoading
-    case didLoadNextBatch(GwentAPI.Response.Cards)
 }
 
 class Store<State, Event> {

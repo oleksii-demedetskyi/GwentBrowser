@@ -25,10 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadCards.perform()
         
         _ = store.subscribe(action: ActionWith<State> { state in
-            allCards.props = CardListViewController.Props.init(
-                items: state.cards.map { $0.name },
-                onItemsEnd: loadCards
-            )
+            DispatchQueue.main.async {
+                allCards.props = CardListViewController.Props.init(
+                    items: state.cards.map { $0.name },
+                    onItemsEnd: loadCards
+                )
+            }
         })
         
         return true
