@@ -14,7 +14,16 @@ class FutureRequest<P, R> {
     func complete(with result: R) { promise(result) }
 }
 
-class LoadCardsTest: XCTestCase {
+let cards = GwentAPI.Response.Cards(
+    count: 1,
+    previous: URL(string: "http://prev.url")!,
+    next: URL(string: "http://next.url")!,
+    results: [GwentAPI.Response.CardLink(
+        href: URL(string: "http://card.href")!,
+        name: "Card")]
+)
+
+class LoadCardsTests: XCTestCase {
     
     var events = [] as [Event]
     var pendingRequest: FutureRequest<URL?, Result<GwentAPI.Response.Cards>>?
@@ -39,15 +48,6 @@ class LoadCardsTest: XCTestCase {
         action = nil
         super.tearDown()
     }
-    
-    let cards = GwentAPI.Response.Cards(
-        count: 1,
-        previous: URL(string: "http://prev.url")!,
-        next: URL(string: "http://next.url")!,
-        results: [GwentAPI.Response.CardLink(
-            href: URL(string: "http://card.href")!,
-            name: "Card")]
-    )
     
     func testWithInitialState() {
         

@@ -13,10 +13,11 @@
 		DE7961C91F3AF04D00FA9D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */; };
 		DE7961CC1F3AF04D00FA9D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7961CA1F3AF04D00FA9D02 /* LaunchScreen.storyboard */; };
 		DE955FC11F3C9A5F004F1147 /* LoadCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FC01F3C9A5F004F1147 /* LoadCards.swift */; };
-		DE955FD11F3CB007004F1147 /* LoadCardsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD01F3CB007004F1147 /* LoadCardsTest.swift */; };
+		DE955FD11F3CB007004F1147 /* LoadCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD01F3CB007004F1147 /* LoadCardsTests.swift */; };
 		DE955FD31F3EE300004F1147 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD21F3EE300004F1147 /* Response.swift */; };
 		DE955FD51F3EE33F004F1147 /* Response+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */; };
 		DE955FD71F3EE509004F1147 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD61F3EE509004F1147 /* Events.swift */; };
+		DE955FD91F3F8F21004F1147 /* CardListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD81F3F8F21004F1147 /* CardListTests.swift */; };
 		DEA098171F3B24C400C5E280 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA098161F3B24C400C5E280 /* Redux.swift */; };
 		DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */; };
 		DEF47BD81F3B1CCD001C9E3E /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF47BD61F3B1CCD001C9E3E /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,10 +68,11 @@
 		DE955FC01F3C9A5F004F1147 /* LoadCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCards.swift; sourceTree = "<group>"; };
 		DE955FC61F3CAF81004F1147 /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE955FCA1F3CAF81004F1147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE955FD01F3CB007004F1147 /* LoadCardsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCardsTest.swift; sourceTree = "<group>"; };
+		DE955FD01F3CB007004F1147 /* LoadCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCardsTests.swift; sourceTree = "<group>"; };
 		DE955FD21F3EE300004F1147 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Equatable.swift"; sourceTree = "<group>"; };
 		DE955FD61F3EE509004F1147 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		DE955FD81F3F8F21004F1147 /* CardListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListTests.swift; sourceTree = "<group>"; };
 		DEA098161F3B24C400C5E280 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		DEF47BC51F3B0184001C9E3E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -147,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				DE955FCA1F3CAF81004F1147 /* Info.plist */,
-				DE955FD01F3CB007004F1147 /* LoadCardsTest.swift */,
+				DE955FD01F3CB007004F1147 /* LoadCardsTests.swift */,
+				DE955FD81F3F8F21004F1147 /* CardListTests.swift */,
 			);
 			path = ApplicationTests;
 			sourceTree = "<group>";
@@ -325,7 +328,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE955FD11F3CB007004F1147 /* LoadCardsTest.swift in Sources */,
+				DE955FD11F3CB007004F1147 /* LoadCardsTests.swift in Sources */,
+				DE955FD91F3F8F21004F1147 /* CardListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +789,7 @@
 				DE955FCF1F3CAF81004F1147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEF47BDD1F3B1CCD001C9E3E /* Build configuration list for PBXNativeTarget "API" */ = {
 			isa = XCConfigurationList;
