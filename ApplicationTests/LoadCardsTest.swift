@@ -17,45 +17,45 @@ class FutureRequest<P, R> {
 class LoadCardsTest: XCTestCase {
     
     var events = [] as [Event]
-    var dispatch: ActionWith<Event>!
     var pendingRequest: FutureRequest<URL?, Result<GwentAPI.Response.Cards>>?
     
-    var action: ((State, ActionWith<Event>) -> ())!
+    var action: ActionWith<State>!
     
     override func setUp() {
         super.setUp()
-        dispatch = ActionWith<Event> { self.events.append($0) }
-        action = loadCards { url in
+        let dispatch = ActionWith<Event> { self.events.append($0) }
+        let load = loadCards { url in
             return Future<Result<GwentAPI.Response.Cards>> {
                 self.pendingRequest = FutureRequest(params: url, promise: $0)
             }
         }
+        
+        action = ActionWith { state in load(state, dispatch) }
     }
     
     override func tearDown() {
-        dispatch = nil
         events = []
         pendingRequest = nil
         action = nil
         super.tearDown()
     }
     
+    let cards = GwentAPI.Response.Cards(
+        count: 1,
+        previous: URL(string: "http://prev.url")!,
+        next: URL(string: "http://next.url")!,
+        results: [GwentAPI.Response.CardLink(
+            href: URL(string: "http://card.href")!,
+            name: "Card")]
+    )
+    
     func testWithInitialState() {
         
-        action(State(), dispatch)
+        action.perform(State())
         
         guard let request = pendingRequest else { return XCTFail("No request was made")}
         XCTAssertEqual(request.params, nil)
         XCTAssertEqual(events, [.didStartNextLoading])
-        
-        let cards = GwentAPI.Response.Cards(
-            count: 1,
-            previous: URL(string: "http://prev.url")!,
-            next: URL(string: "http://next.url")!,
-            results: [GwentAPI.Response.CardLink(
-                href: URL(string: "http://card.href")!,
-                name: "Card")]
-        )
         
         request.complete(with: Result.value(cards))
         
@@ -65,4 +65,29 @@ class LoadCardsTest: XCTestCase {
             .didEndNextLoading
         ])
     }
+    
+    func testWhenAlreadyLoading() {
+        action.perform(State(cards: [], nextBatch: nil, isNextLoading: true))
+        XCTAssertNil(pendingRequest)
+    }
+    
+    func testWhenNoNextBatchAvailable() {
+        action.perform(State(cards: cards.results, nextBatch: nil, isNextLoading: false))
+        XCTAssertNil(pendingRequest)
+    }
+    
+    func testWithSomeCards() {
+        action.perform(State(cards: cards.results, nextBatch: cards.next, isNextLoading: false))
+        guard let request = pendingRequest else { return XCTFail("No request was made")}
+        XCTAssertEqual(request.params, cards.next)
+    }
+    
+    func testWithError() {
+        action.perform(State(cards: cards.results, nextBatch: cards.next, isNextLoading: false))
+        guard let request = pendingRequest else { return XCTFail("No request was made")}
+        enum Error: Swift.Error { case some }
+        request.complete(with: Result.error(Error.some))
+        
+        XCTAssertEqual(events, [.didStartNextLoading, .didEndNextLoading])
+    }   
 }
