@@ -21,13 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else { fatalError("first controller is not card list") }
         
         let loadCards = store.bind(creator: Application.loadCards(api: gwentAPI.getCards(url:)))
+        let loadCard = ActionWith<GwentAPI.Response.CardLink> { print($0) }
         
         loadCards.perform()
         
         _ = store.subscribe(action: ActionWith<State> { state in
             DispatchQueue.main.async {
                 allCards.props = CardListViewController.Props.init(
-                    items: state.cards.map { $0.name },
+                    items: state.cards.map { card in CardListViewController.Props.Item(
+                        name: card.name,
+                        onSelect: loadCard.bind(with: card))
+                    },
                     onItemsEnd: loadCards
                 )
             }

@@ -1,14 +1,12 @@
 import UIKit
 
-typealias Action = ActionWith<Void>
-
-struct ActionWith<T> {
-    let perform: (T) -> Void
-}
-
 class CardListViewController: UITableViewController {
     struct Props {
-        let items: [String]
+        let items: [Item]; struct Item {
+            let name: String
+            let onSelect: Action
+        }
+        
         let onItemsEnd: Action?
         
         static let empty = Props(items: [], onItemsEnd: nil)
@@ -32,8 +30,15 @@ class CardListViewController: UITableViewController {
             props.onItemsEnd?.perform()
         }
         
-        cell.textLabel?.text = props.items[indexPath.row]
+        cell.textLabel?.text = props.items[indexPath.row].name
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        precondition(props.items.indices.contains(indexPath.row),
+                     "Cannot select row: \(indexPath.row) in props: \(props)")
+        
+        props.items[indexPath.row].onSelect.perform()
     }
 }

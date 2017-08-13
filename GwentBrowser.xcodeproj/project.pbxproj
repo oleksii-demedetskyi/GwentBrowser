@@ -18,6 +18,8 @@
 		DE955FD51F3EE33F004F1147 /* Response+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */; };
 		DE955FD71F3EE509004F1147 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD61F3EE509004F1147 /* Events.swift */; };
 		DE955FD91F3F8F21004F1147 /* CardListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD81F3F8F21004F1147 /* CardListTests.swift */; };
+		DE955FDB1F3F90FD004F1147 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FDA1F3F90FD004F1147 /* Parse.swift */; };
+		DE955FDD1F3F92E7004F1147 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FDC1F3F92E7004F1147 /* Action.swift */; };
 		DEA098171F3B24C400C5E280 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA098161F3B24C400C5E280 /* Redux.swift */; };
 		DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */; };
 		DEF47BD81F3B1CCD001C9E3E /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF47BD61F3B1CCD001C9E3E /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +75,8 @@
 		DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Equatable.swift"; sourceTree = "<group>"; };
 		DE955FD61F3EE509004F1147 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DE955FD81F3F8F21004F1147 /* CardListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListTests.swift; sourceTree = "<group>"; };
+		DE955FDA1F3F90FD004F1147 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		DE955FDC1F3F92E7004F1147 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		DEA098161F3B24C400C5E280 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		DEF47BC51F3B0184001C9E3E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				DE955FD61F3EE509004F1147 /* Events.swift */,
 				DE7961C11F3AF04D00FA9D02 /* AppDelegate.swift */,
 				DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */,
+				DE955FDC1F3F92E7004F1147 /* Action.swift */,
 				DE7961C51F3AF04D00FA9D02 /* Main.storyboard */,
 				DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */,
 				DE7961CA1F3AF04D00FA9D02 /* LaunchScreen.storyboard */,
@@ -161,6 +166,7 @@
 				DEF47BE21F3B1D19001C9E3E /* Result.swift */,
 				DEF47BE11F3B1D19001C9E3E /* Future.swift */,
 				DEF47BC51F3B0184001C9E3E /* API.swift */,
+				DE955FDA1F3F90FD004F1147 /* Parse.swift */,
 				DE955FD21F3EE300004F1147 /* Response.swift */,
 				DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */,
 				DEF47BD61F3B1CCD001C9E3E /* API.h */,
@@ -317,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */,
+				DE955FDD1F3F92E7004F1147 /* Action.swift in Sources */,
 				DE7961C21F3AF04D00FA9D02 /* AppDelegate.swift in Sources */,
 				DEA098171F3B24C400C5E280 /* Redux.swift in Sources */,
 				DE955FC11F3C9A5F004F1147 /* LoadCards.swift in Sources */,
@@ -338,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE955FD31F3EE300004F1147 /* Response.swift in Sources */,
+				DE955FDB1F3F90FD004F1147 /* Parse.swift in Sources */,
 				DEF47BE41F3B1D19001C9E3E /* Result.swift in Sources */,
 				DE28F7471F3B1DF60098C0F2 /* API.swift in Sources */,
 				DEF47BE31F3B1D19001C9E3E /* Future.swift in Sources */,
