@@ -44,7 +44,7 @@
         <!--Card name-->
         <scene sceneID="VfK-ZI-F1T">
             <objects>
-                <viewController title="Card name" id="003-2o-VKb" sceneMemberID="viewController">
+                <viewController title="Card name" id="003-2o-VKb" customClass="CardDetailsViewController" customModule="Application" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PLr-8b-Fna"/>
                         <viewControllerLayoutGuide type="bottom" id="Dg5-7y-JrL"/>

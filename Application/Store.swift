@@ -1,26 +1,4 @@
 import Foundation
-import API
-
-struct State {
-    var cards = [] as [GwentAPI.Response.CardLink]
-    var nextBatch = nil as URL?
-    var isNextLoading = false
-}
-
-func reduce(state: inout State, event: Event) {
-    switch event {
-        
-    case .didStartNextLoading:
-        state.isNextLoading = true
-        
-    case .didEndNextLoading:
-        state.isNextLoading = false
-        
-    case let .didLoadNextBatch(cards):
-        state.cards.append(contentsOf: cards.results)
-        state.nextBatch = cards.next
-    }
-}
 
 class Store<State, Event> {
     private(set) var state: State

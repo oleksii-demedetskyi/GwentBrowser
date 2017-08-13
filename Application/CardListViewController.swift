@@ -12,6 +12,7 @@ class CardListViewController: UITableViewController {
         static let empty = Props(items: [], onItemsEnd: nil)
     }
     
+    var router: Router?
     var props: Props = .empty { didSet { tableView.reloadData() } }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,5 +41,9 @@ class CardListViewController: UITableViewController {
                      "Cannot select row: \(indexPath.row) in props: \(props)")
         
         props.items[indexPath.row].onSelect.perform()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.handle(segue: segue, sender: sender)
     }
 }

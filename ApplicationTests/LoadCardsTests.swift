@@ -25,14 +25,14 @@ let cards = GwentAPI.Response.Cards(
 
 class LoadCardsTests: XCTestCase {
     
-    var events = [] as [Event]
+    var events = [] as [Application.Event]
     var pendingRequest: FutureRequest<URL?, Result<GwentAPI.Response.Cards>>?
     
-    var action: ActionWith<State>!
+    var action: ActionWith<Application.State>!
     
     override func setUp() {
         super.setUp()
-        let dispatch = ActionWith<Event> { self.events.append($0) }
+        let dispatch = ActionWith<Application.Event> { self.events.append($0) }
         let load = loadCards { url in
             return Future<Result<GwentAPI.Response.Cards>> {
                 self.pendingRequest = FutureRequest(params: url, promise: $0)
@@ -51,43 +51,46 @@ class LoadCardsTests: XCTestCase {
     
     func testWithInitialState() {
         
-        action.perform(State())
+        action.perform(Application.State())
         
         guard let request = pendingRequest else { return XCTFail("No request was made")}
         XCTAssertEqual(request.params, nil)
-        XCTAssertEqual(events, [.didStartNextLoading])
+        XCTAssertEqual(events, [.cardList(.didStartNextLoading)])
         
         request.complete(with: Result.value(cards))
         
         XCTAssertEqual(events, [
-            .didStartNextLoading,
-            .didLoadNextBatch(cards),
-            .didEndNextLoading
+            .cardList(.didStartNextLoading),
+            .cardList(.didLoadNextBatch(cards)),
+            .cardList(.didEndNextLoading)
         ])
     }
     
     func testWhenAlreadyLoading() {
-        action.perform(State(cards: [], nextBatch: nil, isNextLoading: true))
+        action.perform(Application.State(
+            cardList: CardList.State(cards: [], nextBatch: nil, isNextLoading: true)))
         XCTAssertNil(pendingRequest)
     }
     
     func testWhenNoNextBatchAvailable() {
-        action.perform(State(cards: cards.results, nextBatch: nil, isNextLoading: false))
+        action.perform(Application.State(cardList: CardList.State(cards: cards.results, nextBatch: nil, isNextLoading: false)))
         XCTAssertNil(pendingRequest)
     }
     
     func testWithSomeCards() {
-        action.perform(State(cards: cards.results, nextBatch: cards.next, isNextLoading: false))
+        action.perform(Application.State(cardList: CardList.State(cards: cards.results, nextBatch: cards.next, isNextLoading: false)))
         guard let request = pendingRequest else { return XCTFail("No request was made")}
         XCTAssertEqual(request.params, cards.next)
     }
     
     func testWithError() {
-        action.perform(State(cards: cards.results, nextBatch: cards.next, isNextLoading: false))
+        action.perform(Application.State(cardList: CardList.State(cards: cards.results, nextBatch: cards.next, isNextLoading: false)))
         guard let request = pendingRequest else { return XCTFail("No request was made")}
         enum Error: Swift.Error { case some }
         request.complete(with: Result.error(Error.some))
         
-        XCTAssertEqual(events, [.didStartNextLoading, .didEndNextLoading])
+        XCTAssertEqual(events, [
+            .cardList(.didStartNextLoading),
+            .cardList(.didEndNextLoading)])
     }   
 }

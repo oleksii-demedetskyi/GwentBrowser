@@ -16,11 +16,15 @@
 		DE955FD11F3CB007004F1147 /* LoadCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD01F3CB007004F1147 /* LoadCardsTests.swift */; };
 		DE955FD31F3EE300004F1147 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD21F3EE300004F1147 /* Response.swift */; };
 		DE955FD51F3EE33F004F1147 /* Response+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */; };
-		DE955FD71F3EE509004F1147 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD61F3EE509004F1147 /* Events.swift */; };
 		DE955FD91F3F8F21004F1147 /* CardListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FD81F3F8F21004F1147 /* CardListTests.swift */; };
 		DE955FDB1F3F90FD004F1147 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FDA1F3F90FD004F1147 /* Parse.swift */; };
 		DE955FDD1F3F92E7004F1147 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FDC1F3F92E7004F1147 /* Action.swift */; };
-		DEA098171F3B24C400C5E280 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA098161F3B24C400C5E280 /* Redux.swift */; };
+		DE955FDF1F408579004F1147 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FDE1F408579004F1147 /* CardDetailsViewController.swift */; };
+		DE955FE11F4086F9004F1147 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FE01F4086F9004F1147 /* Router.swift */; };
+		DE955FE31F4090EC004F1147 /* LoadSingleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FE21F4090EC004F1147 /* LoadSingleCard.swift */; };
+		DE955FE51F4092C6004F1147 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FE41F4092C6004F1147 /* CardList.swift */; };
+		DE955FE71F409447004F1147 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE955FE61F409447004F1147 /* Application.swift */; };
+		DEA098171F3B24C400C5E280 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA098161F3B24C400C5E280 /* Store.swift */; };
 		DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */; };
 		DEF47BD81F3B1CCD001C9E3E /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF47BD61F3B1CCD001C9E3E /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEF47BDB1F3B1CCD001C9E3E /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF47BD41F3B1CCD001C9E3E /* API.framework */; };
@@ -73,11 +77,15 @@
 		DE955FD01F3CB007004F1147 /* LoadCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCardsTests.swift; sourceTree = "<group>"; };
 		DE955FD21F3EE300004F1147 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		DE955FD41F3EE33F004F1147 /* Response+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Equatable.swift"; sourceTree = "<group>"; };
-		DE955FD61F3EE509004F1147 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DE955FD81F3F8F21004F1147 /* CardListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListTests.swift; sourceTree = "<group>"; };
 		DE955FDA1F3F90FD004F1147 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		DE955FDC1F3F92E7004F1147 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
-		DEA098161F3B24C400C5E280 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		DE955FDE1F408579004F1147 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		DE955FE01F4086F9004F1147 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DE955FE21F4090EC004F1147 /* LoadSingleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSingleCard.swift; sourceTree = "<group>"; };
+		DE955FE41F4092C6004F1147 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		DE955FE61F409447004F1147 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		DEA098161F3B24C400C5E280 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		DEF47BC51F3B0184001C9E3E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DEF47BD41F3B1CCD001C9E3E /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,16 +144,20 @@
 		DE7961C01F3AF04D00FA9D02 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				DEA098161F3B24C400C5E280 /* Redux.swift */,
-				DE955FD61F3EE509004F1147 /* Events.swift */,
+				DE955FE61F409447004F1147 /* Application.swift */,
+				DE955FE41F4092C6004F1147 /* CardList.swift */,
+				DEA098161F3B24C400C5E280 /* Store.swift */,
 				DE7961C11F3AF04D00FA9D02 /* AppDelegate.swift */,
 				DEF47BC31F3AF6CC001C9E3E /* CardListViewController.swift */,
+				DE955FE01F4086F9004F1147 /* Router.swift */,
+				DE955FDE1F408579004F1147 /* CardDetailsViewController.swift */,
 				DE955FDC1F3F92E7004F1147 /* Action.swift */,
 				DE7961C51F3AF04D00FA9D02 /* Main.storyboard */,
 				DE7961C81F3AF04D00FA9D02 /* Assets.xcassets */,
 				DE7961CA1F3AF04D00FA9D02 /* LaunchScreen.storyboard */,
 				DE7961CD1F3AF04D00FA9D02 /* Info.plist */,
 				DE955FC01F3C9A5F004F1147 /* LoadCards.swift */,
+				DE955FE21F4090EC004F1147 /* LoadSingleCard.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -322,12 +334,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE955FE71F409447004F1147 /* Application.swift in Sources */,
+				DE955FE11F4086F9004F1147 /* Router.swift in Sources */,
+				DE955FDF1F408579004F1147 /* CardDetailsViewController.swift in Sources */,
+				DE955FE31F4090EC004F1147 /* LoadSingleCard.swift in Sources */,
 				DEF47BC41F3AF6CC001C9E3E /* CardListViewController.swift in Sources */,
 				DE955FDD1F3F92E7004F1147 /* Action.swift in Sources */,
 				DE7961C21F3AF04D00FA9D02 /* AppDelegate.swift in Sources */,
-				DEA098171F3B24C400C5E280 /* Redux.swift in Sources */,
+				DEA098171F3B24C400C5E280 /* Store.swift in Sources */,
+				DE955FE51F4092C6004F1147 /* CardList.swift in Sources */,
 				DE955FC11F3C9A5F004F1147 /* LoadCards.swift in Sources */,
-				DE955FD71F3EE509004F1147 /* Events.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
