@@ -28,7 +28,7 @@ class CardListViewController: UITableViewController {
         }
         
         if (props.items.indices.last == indexPath.row) {
-            props.onItemsEnd?.perform()
+            props.onItemsEnd?.perform(())
         }
         
         cell.textLabel?.text = props.items[indexPath.row].name
@@ -40,7 +40,7 @@ class CardListViewController: UITableViewController {
         precondition(props.items.indices.contains(indexPath.row),
                      "Cannot select row: \(indexPath.row) in props: \(props)")
         
-        props.items[indexPath.row].onSelect.perform()
+        props.items[indexPath.row].onSelect.perform(())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loadCardsAction = store.bind(creator: loadCards(api: gwentAPI.getCards(url:)))
         let loadCard = ActionWith<GwentAPI.Response.CardLink> { print($0) }
         
-        loadCardsAction.perform()
+        loadCardsAction.perform(())
         
         _ = store.subscribe(action: ActionWith<Application.State> { state in
             DispatchQueue.main.async {
